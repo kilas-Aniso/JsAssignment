@@ -75,9 +75,11 @@ inventory. Then, create an instance of the Rental class or function constructor 
 a rental involving the car you created. Finally, calculate the rental duration using
 the calculateRentalDuration method.
 */
+let car1=new Car('BMW','Honda', 2020, true);
+let rentedCar1=new RentalCar('Kilas',new Date(2018,4,23), new Date(2024,4,12) )
 
-
-
+let rentalDuration = rentedCar.calculateRentalDuration();
+console.log(rentalDuration);
 /*
 Question2
 You are building a simple quiz app that contains multiple-choice questions. Your task is
@@ -92,31 +94,45 @@ The Question class should also have a method called checkAnswer that takes a
 user's answer as a parameter and returns true if the answer is correct and false
 otherwise.
 */
-class Question {
-    constructor(text, options, correctAnswer) {
-      this.text = text;
-      this.options = options;
-      this.correctAnswer = correctAnswer;
+
+class Question{
+    constructor(text,options,correctAnswer){
+        this.text=text;
+        this.options=options;
+        this.correctAnswer=correctAnswer;
     }
-  
-    checkAnswer(userAnswer) {
-      return userAnswer === this.correctAnswer;
+    checkAnswer(){
+        userAnswer==this.correctAnswer
+        return true
     }
-  }
-  let question1 = new Question(
-    "Who is the president of Kenya?",
-    ["Raila", "Ruto", "Uhuru", "JOho"],
-    "Ruto"
-  );
-  
-  let question2 = new Question(
-    "What is the largest planet in our solar system?",
-    ["Jupiter", "Saturn", "Mars", "Venus"],
-    "Mars"
-  );
-  
+}
+
+let question1=new Question(
+    'what is the capital of Ethiopia',
+    '["Harare","AddisAbaba","Asmara"]',
+    'AddisAbaba'
+)
+let question2= new Question(
+    'what is the capital of Somalia',
+    '["Mogadishu","Kismayo","Hargeisa"]',
+    'Mogadishu'
+
+)
+let userAnswer='Addisabab'
 console.log(question1);
-console.log(question2)
+console.log(question1.checkAnswer(userAnswer));
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 2. Create a Quiz class with the following properties:
@@ -133,6 +149,7 @@ currentQuestionIndex.
 correct using the checkAnswer method of the Question class, and updates the
 score if the answer is correct.
 */
+
 class Quiz {
     constructor() {
       this.questions = [];
