@@ -83,3 +83,21 @@ const car = {
   };
   
   console.log(car.age()); 
+
+
+
+  const numbers1 = [45, 4, 9, 16, 25];
+  let sum1 = numbers1.reduce((a,b) =>{return(a+b)},0);
+  console.log(sum1)
+
+  const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+console.log(sum)
+
+const num=[12,43,64,75,34];
+const total=num.reduce((a,b) =>{
+  return a+b;
+},0);
+console.log(total)
