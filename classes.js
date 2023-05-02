@@ -95,38 +95,33 @@ user's answer as a parameter and returns true if the answer is correct and false
 otherwise.
 */
 
-class Question{
-    constructor(text,options,correctAnswer){
-        this.text=text;
-        this.options=options;
-        this.correctAnswer=correctAnswer;
-    }
-    checkAnswer(){
-        userAnswer==this.correctAnswer
-        return true
-    }
+class Question {
+  constructor(text, options, correctAnswer) {
+    this.text = text;
+    this.options = options;
+    this.correctAnswer = correctAnswer;
+  }
+
+  checkAnswer(userAnswer) {
+    return userAnswer === this.correctAnswer;
+  }
 }
 
 let question1=new Question(
-    'what is the capital of Ethiopia',
-    '["Harare","AddisAbaba","Asmara"]',
-    'AddisAbaba'
+  'what is the capital of Ethiopia',
+  '["Harare","AddisAbaba","Asmara"]',
+  'AddisAbaba'
 )
 let question2= new Question(
-    'what is the capital of Somalia',
-    '["Mogadishu","Kismayo","Hargeisa"]',
-    'Mogadishu'
+  'what is the capital of Somalia',
+  '["Mogadishu","Kismayo","Hargeisa"]',
+  'Mogadishu'
 
 )
-let userAnswer='Addisabab'
+let userAnswer='AddisAbaba'
 console.log(question1);
-console.log(question1.checkAnswer(userAnswer));
 
-
-
-
-
-
+console.log(question1.checkAnswer());
 
 
 
@@ -150,36 +145,37 @@ correct using the checkAnswer method of the Question class, and updates the
 score if the answer is correct.
 */
 
+
 class Quiz {
-    constructor() {
-      this.questions = [];
-      this.currentQuestionIndex = 0;
-      this.score = 0;
-    }
-  
-    addQuestion(question) {
-      this.questions.push(question);
-    }
-  
-    nextQuestion() {
-      this.currentQuestionIndex++;
-    }
-  
-    submitAnswer(userAnswer) {
-      const currentQuestion = this.questions[this.currentQuestionIndex];
-      if (currentQuestion.checkAnswer(userAnswer)) {
-        this.score++;
-      }
-    }
+  constructor() {
+    this.questions = [];
+    this.currentQuestionIndex = 0;
+    this.score = 0;
   }
 
+  addQuestion(question) {
+    this.questions.push(question);
+  }
 
-  let quiz = new Quiz();
+  nextQuestion() {
+    this.currentQuestionIndex++;
+  }
+
+  submitAnswer(userAnswer) {
+    const currentQuestion = this.questions[this.currentQuestionIndex];
+    if (currentQuestion.checkAnswer(userAnswer)) {
+      this.score++;
+    }
+  }
+}
+
+  
+const quiz = new Quiz();
 quiz.addQuestion(question1);
 quiz.addQuestion(question2);
 
-quiz.submitAnswer("Ruto");
+quiz.submitAnswer("Harare");
 quiz.nextQuestion();
-quiz.submitAnswer("Jupiter");
+quiz.submitAnswer("Mogadishu");
 
-console.log(quiz.score); 
+console.log(quiz.score);
