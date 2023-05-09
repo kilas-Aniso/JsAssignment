@@ -49,7 +49,7 @@ calculateRentalDuration that returns the rental duration in days.
 class RentalCar{
     constructor(car,renterName,rentalStartDate,rentalEndDate){
 this.car=car;
-this.renterName=this.renterName;
+this.renterName=renterName;
 this.rentalStartDate=rentalStartDate;
 this.rentalEndDate=rentalEndDate;
     }
@@ -64,7 +64,7 @@ this.rentalEndDate=rentalEndDate;
 let rentedCar= new RentalCar(car,'Nisa',new Date(2020,8,1),new Date(2025,2,21))
 console.log(rentedCar.calculateRentalDuration())
 console.log(rentedCar);
-
+ 
 
 
 
@@ -162,7 +162,7 @@ class Quiz {
   }
 
   submitAnswer(userAnswer) {
-    const currentQuestion = this.questions[this.currentQuestionIndex];
+    const currentQuestion = this.question[this.currentQuestionIndex];
     if (currentQuestion.checkAnswer(userAnswer)) {
       this.score++;
     }
